@@ -47,7 +47,8 @@ before_debug:
 	test -d bin/Debug || mkdir -p bin/Debug
 	test -d $(OBJDIR_DEBUG) || mkdir -p $(OBJDIR_DEBUG)
 
-after_debug: 
+after_debug:
+	cp -rf assets bin/Debug    
 
 debug: before_debug out_debug after_debug
 
@@ -90,7 +91,8 @@ before_release:
 	test -d bin/Release || mkdir -p bin/Release
 	test -d $(OBJDIR_RELEASE) || mkdir -p $(OBJDIR_RELEASE)
 
-after_release: 
+after_release:
+	cp -rf assets bin/Release
 
 release: before_release out_release after_release
 
