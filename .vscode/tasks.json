@@ -6,15 +6,9 @@
         {
             "label": "Linux g++ Debug",
             "type": "shell",
-            "command": "g++",
+            "command": "make",
             "args": [
-                "-g",
-                "-o",
-                "bin/Debug/SDL_2DPlatformer",
-                "*.cpp",
-                "-lSDL2",
-                "-lSDL2_ttf",
-                "-lSDL2_mixer"
+                "debug"
             ],
             "group": {
                 "kind": "build",
@@ -24,14 +18,9 @@
         {
             "label": "Linux g++ Release",
             "type": "shell",
-            "command": "g++",
+            "command": "make",
             "args": [
-                "-o",
-                "bin/Release/SDL_2DPlatformer",
-                "*.cpp",
-                "-lSDL2",
-                "-lSDL2_ttf",
-                "-lSDL2_mixer"
+                "release"
             ],
             "group": {
                 "kind": "build",
