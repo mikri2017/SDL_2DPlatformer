@@ -1,29 +1,6 @@
 {
     "configurations": [
         {
-            "name": "Mac",
-            "includePath": [
-                "/usr/include",
-                "/usr/local/include",
-                "${workspaceFolder}"
-            ],
-            "defines": [],
-            "intelliSenseMode": "clang-x64",
-            "browse": {
-                "path": [
-                    "/usr/include",
-                    "/usr/local/include",
-                    "${workspaceFolder}"
-                ],
-                "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
-            },
-            "macFrameworkPath": [
-                "/System/Library/Frameworks",
-                "/Library/Frameworks"
-            ]
-        },
-        {
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}",
@@ -56,25 +33,31 @@
             "cppStandard": "c++17"
         },
         {
-            "name": "Win32",
+            "name": "MinGW",
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "C:/MinGW/MinGW/bin/g++.exe",
             "includePath": [
-                "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include",
-                "${workspaceFolder}"
+                "${workspaceFolder}",
+                "C:/SDL/SDL2-2.0.8/i686-w64-mingw32/include",
+                "C:/SDL/SDL2_ttf-2.0.14/i686-w64-mingw32/include",
+                "C:/SDL/SDL2_mixer-2.0.2/i686-w64-mingw32/include"
+
             ],
             "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
+                "_DEBUG"
             ],
-            "intelliSenseMode": "msvc-x64",
             "browse": {
                 "path": [
-                    "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include/*",
+                    "C:/MinGW/lib/gcc/mingw32/6.3.0/include",
+                    "C:/MinGW/lib/gcc/mingw32/6.3.0/include-fixed",
+                    "C:/MinGW/include/*",
                     "${workspaceFolder}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
-            }
+            },
+            "cStandard": "c11",
+            "cppStandard": "c++17"
         }
     ],
     "version": 3

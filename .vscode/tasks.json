@@ -26,6 +26,30 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Windows g++ Debug",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "debug"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Windows g++ Release",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "release"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
