@@ -13,7 +13,6 @@ SDL_Game::~SDL_Game()
     delete s_mgr;
     SDL_DestroyWindow( window ); // Уничтожаем окно
     TTF_Quit(); // Отключаем библиотеку SDL_ttf
-    Mix_CloseAudio(); // Закрываем аудио
     SDL_Quit(); //Выход из SDL
 #ifdef DEBUG_MESSAGES_SHOW
     std::cout << "SDL_Game end\n";
@@ -41,12 +40,6 @@ bool SDL_Game::init(const char* title, int xpos, int ypos,
         }
         else
             renderer = SDL_CreateRenderer( window, -1, SDL_RENDERER_ACCELERATED);
-
-        if (Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1)
-        {
-            SDL_error_msg = "Audio mixer not initialized " + std::string(SDL_GetError());
-            return false;
-        }
 	}
 
 	s_mgr = new SceneMgr();
