@@ -28,10 +28,25 @@
             }
         },
         {
-            "label": "Windows g++ Debug",
+            "label": "Linux g++ Clean",
             "type": "shell",
             "command": "make",
             "args": [
+                "clean"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Windows g++ Debug",
+            "type": "shell",
+            "command": "set",
+            "args": [
+                "PATH=C:/MinGW/MinGW/bin/;PATH",
+                "&&",
+                "mingw32-make.exe",
                 "debug"
             ],
             "group": {
@@ -42,9 +57,27 @@
         {
             "label": "Windows g++ Release",
             "type": "shell",
-            "command": "make",
+            "command": "set",
             "args": [
+                "PATH=C:/MinGW/MinGW/bin/;PATH",
+                "&&",
+                "mingw32-make.exe",
                 "release"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Windows g++ Clean",
+            "type": "shell",
+            "command": "set",
+            "args": [
+                "PATH=C:/MinGW/MinGW/bin/;PATH",
+                "&&",
+                "mingw32-make.exe",
+                "clean"
             ],
             "group": {
                 "kind": "build",
