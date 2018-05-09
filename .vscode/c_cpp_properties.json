@@ -42,7 +42,6 @@
                 "C:/SDL/SDL2_ttf-2.0.14/i686-w64-mingw32/include",
                 "C:/SDL/SDL2_mixer-2.0.2/i686-w64-mingw32/include",
                 "C:/SDL/SDL2_image-2.0.3/i686-w64-mingw32/include"
-
             ],
             "defines": [
                 "_DEBUG"
@@ -61,5 +60,5 @@
             "cppStandard": "c++17"
         }
     ],
-    "version": 3
+    "version": 4
 }
