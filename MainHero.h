@@ -12,8 +12,7 @@ class MainHero : public GameObject
 private:
     std::string spriteFilePath;
     SDL_Texture *hero_texture;
-    SDL_Rect hero_sourceRect;
-    SDL_Rect hero_destRect;
+    int curRow;
     int curFrame;
     TextureMgr *textureMgr;
     std::string textureName;
@@ -21,8 +20,8 @@ public:
     MainHero();
     ~MainHero();
     bool init(SDL_Renderer *renderer);
+    void setTextureRowAndFrame(int row, int frame);
     void draw(SDL_Renderer *renderer);
-    bool checkCollisionWithGameObject(GameObject *g_obj);
 };
 
 #endif // MAINHERO_H_INCLUDED

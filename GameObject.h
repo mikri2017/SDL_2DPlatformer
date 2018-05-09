@@ -14,9 +14,13 @@ public:
     virtual ~GameObject() {};
     virtual std::string getErrorText();
     virtual SDL_Rect getGameObjectZone();
+    virtual int getPositionBeginX();
+    virtual int getPositionBeginY();
+    virtual void setPosition(int x, int y);
+    virtual void setGameObjectZone(int x, int y, int w, int h);
     virtual bool init(SDL_Renderer *renderer) = 0;
+    virtual void setTextureRowAndFrame(int row, int frame) = 0;
     virtual void draw(SDL_Renderer *renderer) = 0;
-    virtual bool checkCollisionWithGameObject(GameObject *g_obj) = 0;
 };
 
 #endif // GAMEOBJECT_H_INCLUDED

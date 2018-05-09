@@ -5,7 +5,7 @@
 SceneGame::SceneGame()
 {
     lives = 3; // Выставляем количество жизней
-    hero = new MainHero();
+    hero = new MainHeroMgr();
 
     delay_time = 5;
 }
@@ -28,7 +28,7 @@ void SceneGame::render(SDL_Renderer *renderer)
 
             SDL_SetRenderDrawColor( renderer, 255, 255, 255, 255 );
             SDL_RenderClear( renderer );
-            SDL_SetRenderDrawColor( renderer, 255, 0, 0, 255 );
+            SDL_SetRenderDrawColor( renderer, 255, 255, 255, 255 );
 
             if(!hero->init(renderer))
                 std::cout << "Error: " << hero->getErrorText() << std::endl;
@@ -65,6 +65,7 @@ gameReaction SceneGame::process_keyboard_keydown(SDL_Keycode keycode)
 {
     if(!b_paused)
     {
+        hero->process_keyboard_keydown(keycode);
     }
 
     return gameReaction::gr_ignore;

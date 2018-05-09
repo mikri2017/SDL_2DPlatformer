@@ -7,8 +7,11 @@ MainHero::MainHero()
     // Задаем размеры главного героя
     g_obj_zone.x = 100;
     g_obj_zone.y = 100;
-    g_obj_zone.w = 100;
-    g_obj_zone.h = 100;
+    g_obj_zone.w = 56;
+    g_obj_zone.h = 71;
+
+    curRow = 1;
+    curFrame = 0;
 
     textureName = "main_hero";
 
@@ -34,12 +37,14 @@ bool MainHero::init(SDL_Renderer *renderer)
     }
 }
 
-void MainHero::draw(SDL_Renderer *renderer)
+void MainHero::setTextureRowAndFrame(int row, int frame)
 {
-    //textureMgr->draw(textureName, 0, 0, 56, 71, renderer);
+    curRow = row;
+    curFrame = frame;
 }
 
-bool MainHero::checkCollisionWithGameObject(GameObject *g_obj)
+void MainHero::draw(SDL_Renderer *renderer)
 {
-    return false;
+    //textureMgr->draw(textureName, g_obj_zone.x, g_obj_zone.y, g_obj_zone.w, g_obj_zone.h, renderer);
+    textureMgr->drawFrame(textureName, g_obj_zone.x, g_obj_zone.y, g_obj_zone.w, g_obj_zone.h, curRow, curFrame, renderer);
 }
