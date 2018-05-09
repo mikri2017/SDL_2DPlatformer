@@ -11,8 +11,8 @@ PATH_DELIM = \\
 
 MINGW_BIN_PATH = C:\\MinGW\\MinGW\\bin
 
-SDL2_INC_PARAM = -IC:\SDL\SDL2-2.0.8\i686-w64-mingw32\include -IC:\SDL\SDL2_ttf-2.0.14\i686-w64-mingw32\include -IC:\SDL\SDL2_mixer-2.0.2\i686-w64-mingw32\include
-SDL2_LIB_PARAM = -LC:\SDL\SDL2-2.0.8\i686-w64-mingw32\lib -LC:\SDL\SDL2_ttf-2.0.14\i686-w64-mingw32\lib -LC:\SDL\SDL2_mixer-2.0.2\x86_64-w64-mingw32\lib
+SDL2_INC_PARAM = -IC:\SDL\SDL2-2.0.8\i686-w64-mingw32\include -IC:\SDL\SDL2_ttf-2.0.14\i686-w64-mingw32\include -IC:\SDL\SDL2_mixer-2.0.2\i686-w64-mingw32\include -IC:\SDL\SDL2_image-2.0.3\i686-w64-mingw32\include
+SDL2_LIB_PARAM = -LC:\SDL\SDL2-2.0.8\i686-w64-mingw32\lib -LC:\SDL\SDL2_ttf-2.0.14\i686-w64-mingw32\lib -LC:\SDL\SDL2_mixer-2.0.2\x86_64-w64-mingw32\lib -LC:\SDL\SDL2_image-2.0.3\i686-w64-mingw32\lib
 
 CC = $(MINGW_BIN_PATH)\\gcc.exe
 CXX = $(MINGW_BIN_PATH)\\g++.exe
@@ -47,9 +47,9 @@ RCFLAGS_DEBUG = $(RCFLAGS)
 LIBDIR_DEBUG = $(LIBDIR)
 LIB_DEBUG = $(LIB)
 ifeq ($(OS),Windows_NT)
-LDFLAGS_DEBUG = $(LDFLAGS) $(SDL2_LIB_PARAM) -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lSDL2_mixer
+LDFLAGS_DEBUG = $(LDFLAGS) $(SDL2_LIB_PARAM) -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lSDL2_mixer -lSDL2_image
 else
-LDFLAGS_DEBUG = $(LDFLAGS) -lSDL2 -lSDL2_ttf -lSDL2_mixer
+LDFLAGS_DEBUG = $(LDFLAGS) -lSDL2 -lSDL2_ttf -lSDL2_mixer -lSDL2_image
 endif
 
 ifeq ($(OS),Windows_NT)
@@ -73,9 +73,9 @@ RCFLAGS_RELEASE = $(RCFLAGS)
 LIBDIR_RELEASE = $(LIBDIR)
 LIB_RELEASE = $(LIB)
 ifeq ($(OS),Windows_NT)
-LDFLAGS_RELEASE = $(LDFLAGS) $(SDL2_LIB_PARAM) -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lSDL2_mixer
+LDFLAGS_RELEASE = $(LDFLAGS) $(SDL2_LIB_PARAM) -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lSDL2_mixer -lSDL2_image
 else
-LDFLAGS_RELEASE = $(LDFLAGS) -lSDL2 -lSDL2_ttf -lSDL2_mixer
+LDFLAGS_RELEASE = $(LDFLAGS) -lSDL2 -lSDL2_ttf -lSDL2_mixer -lSDL2_image
 endif
 
 ifeq ($(OS),Windows_NT)
@@ -88,9 +88,9 @@ DEP_RELEASE =
 OUT_RELEASE = bin/Release/$(EXEC_FILE_NAME)
 endif
 
-OBJ_DEBUG = $(OBJDIR_DEBUG)$(PATH_DELIM)SDL_Game.o $(OBJDIR_DEBUG)$(PATH_DELIM)Scene.o $(OBJDIR_DEBUG)$(PATH_DELIM)SceneGame.o $(OBJDIR_DEBUG)$(PATH_DELIM)SceneMenu.o $(OBJDIR_DEBUG)$(PATH_DELIM)SceneMenuPause.o $(OBJDIR_DEBUG)$(PATH_DELIM)SceneMgr.o $(OBJDIR_DEBUG)$(PATH_DELIM)main.o $(OBJDIR_DEBUG)$(PATH_DELIM)Button.o $(OBJDIR_DEBUG)$(PATH_DELIM)FontMgr.o
+OBJ_DEBUG = $(OBJDIR_DEBUG)$(PATH_DELIM)SDL_Game.o $(OBJDIR_DEBUG)$(PATH_DELIM)Scene.o $(OBJDIR_DEBUG)$(PATH_DELIM)SceneGame.o $(OBJDIR_DEBUG)$(PATH_DELIM)SceneMenu.o $(OBJDIR_DEBUG)$(PATH_DELIM)SceneMenuPause.o $(OBJDIR_DEBUG)$(PATH_DELIM)SceneMgr.o $(OBJDIR_DEBUG)$(PATH_DELIM)main.o $(OBJDIR_DEBUG)$(PATH_DELIM)Button.o $(OBJDIR_DEBUG)$(PATH_DELIM)FontMgr.o $(OBJDIR_DEBUG)$(PATH_DELIM)GameObject.o $(OBJDIR_DEBUG)$(PATH_DELIM)MainHero.o $(OBJDIR_DEBUG)$(PATH_DELIM)TextureMgr.o
 
-OBJ_RELEASE = $(OBJDIR_RELEASE)$(PATH_DELIM)SDL_Game.o $(OBJDIR_RELEASE)$(PATH_DELIM)Scene.o $(OBJDIR_RELEASE)$(PATH_DELIM)SceneGame.o $(OBJDIR_RELEASE)$(PATH_DELIM)SceneMenu.o $(OBJDIR_RELEASE)$(PATH_DELIM)SceneMenuPause.o $(OBJDIR_RELEASE)$(PATH_DELIM)SceneMgr.o $(OBJDIR_RELEASE)$(PATH_DELIM)main.o $(OBJDIR_RELEASE)$(PATH_DELIM)Button.o $(OBJDIR_RELEASE)$(PATH_DELIM)FontMgr.o
+OBJ_RELEASE = $(OBJDIR_RELEASE)$(PATH_DELIM)SDL_Game.o $(OBJDIR_RELEASE)$(PATH_DELIM)Scene.o $(OBJDIR_RELEASE)$(PATH_DELIM)SceneGame.o $(OBJDIR_RELEASE)$(PATH_DELIM)SceneMenu.o $(OBJDIR_RELEASE)$(PATH_DELIM)SceneMenuPause.o $(OBJDIR_RELEASE)$(PATH_DELIM)SceneMgr.o $(OBJDIR_RELEASE)$(PATH_DELIM)main.o $(OBJDIR_RELEASE)$(PATH_DELIM)Button.o $(OBJDIR_RELEASE)$(PATH_DELIM)FontMgr.o $(OBJDIR_RELEASE)$(PATH_DELIM)GameObject.o $(OBJDIR_RELEASE)$(PATH_DELIM)MainHero.o $(OBJDIR_RELEASE)$(PATH_DELIM)TextureMgr.o
 
 all: debug release
 
@@ -143,6 +143,16 @@ $(OBJDIR_DEBUG)$(PATH_DELIM)Button.o: Button.cpp
 
 $(OBJDIR_DEBUG)$(PATH_DELIM)FontMgr.o: FontMgr.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c FontMgr.cpp -o $(OBJDIR_DEBUG)$(PATH_DELIM)FontMgr.o
+
+$(OBJDIR_DEBUG)$(PATH_DELIM)GameObject.o: GameObject.cpp
+	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c GameObject.cpp -o $(OBJDIR_DEBUG)$(PATH_DELIM)GameObject.o
+
+$(OBJDIR_DEBUG)$(PATH_DELIM)MainHero.o: MainHero.cpp
+	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c MainHero.cpp -o $(OBJDIR_DEBUG)$(PATH_DELIM)MainHero.o
+
+$(OBJDIR_DEBUG)$(PATH_DELIM)TextureMgr.o: TextureMgr.cpp
+	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c TextureMgr.cpp -o $(OBJDIR_DEBUG)$(PATH_DELIM)TextureMgr.o
+	
 
 clean_debug:
 ifeq ($(OS),Windows_NT)
@@ -202,6 +212,15 @@ $(OBJDIR_RELEASE)$(PATH_DELIM)Button.o: Button.cpp
 
 $(OBJDIR_RELEASE)$(PATH_DELIM)FontMgr.o: FontMgr.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c FontMgr.cpp -o $(OBJDIR_RELEASE)$(PATH_DELIM)FontMgr.o
+
+$(OBJDIR_RELEASE)$(PATH_DELIM)GameObject.o: GameObject.cpp
+	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c GameObject.cpp -o $(OBJDIR_RELEASE)$(PATH_DELIM)GameObject.o
+
+$(OBJDIR_RELEASE)$(PATH_DELIM)MainHero.o: MainHero.cpp
+	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c MainHero.cpp -o $(OBJDIR_RELEASE)$(PATH_DELIM)MainHero.o
+
+$(OBJDIR_RELEASE)$(PATH_DELIM)TextureMgr.o: TextureMgr.cpp
+	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c TextureMgr.cpp -o $(OBJDIR_RELEASE)$(PATH_DELIM)TextureMgr.o
 
 clean_release: 
 ifeq ($(OS),Windows_NT)

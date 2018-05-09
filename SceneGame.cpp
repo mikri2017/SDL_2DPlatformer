@@ -4,14 +4,15 @@
 
 SceneGame::SceneGame()
 {
-    // Выставляем количество жизней
-    lives = 3;
+    lives = 3; // Выставляем количество жизней
+    hero = new MainHero();
 
     delay_time = 5;
 }
 
 SceneGame::~SceneGame()
 {
+    delete hero;
 #ifdef DEBUG_MESSAGES_SHOW
     std::cout << "SceneGame end\n";
 #endif // DEBUG_MESSAGES_SHOW
@@ -28,7 +29,12 @@ void SceneGame::render(SDL_Renderer *renderer)
             SDL_SetRenderDrawColor( renderer, 255, 255, 255, 255 );
             SDL_RenderClear( renderer );
             SDL_SetRenderDrawColor( renderer, 255, 0, 0, 255 );
+
+            if(!hero->init(renderer))
+                std::cout << "Error: " << hero->getErrorText() << std::endl;
         }
+
+        hero->draw(renderer);
 
         SDL_RenderPresent(renderer);
 

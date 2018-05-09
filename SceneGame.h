@@ -4,12 +4,14 @@
 #include "DebugParams.h"
 #include <string>
 #include "Scene.h"
+#include "MainHero.h"
 
 class SceneGame: public Scene
 {
 private:
     int lives;
     int delay_time;
+    MainHero *hero;
 public:
     SceneGame();
     ~SceneGame();
