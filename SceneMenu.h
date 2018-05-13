@@ -3,7 +3,7 @@
 
 #include "DebugParams.h"
 #include "Scene.h"
-#include "Button.h"
+#include "ui/Button.h"
 
 class SceneMenu : public Scene
 {

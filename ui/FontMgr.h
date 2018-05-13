@@ -1,9 +1,8 @@
 #ifndef FONTMGR_H_INCLUDED
 #define FONTMGR_H_INCLUDED
 
-#include "DebugParams.h"
-#include "MainConstants.h"
-#include <iostream>
+#include "../MainConstants.h"
+#include <string>
 #include <SDL2/SDL_ttf.h>
 
 enum fontAlign {

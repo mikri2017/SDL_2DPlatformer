@@ -1,4 +1,7 @@
 #include "Button.h"
+
+#include <iostream>
+#include "../DebugParams.h"
 #include "FontMgr.h"
 
 Button::Button()

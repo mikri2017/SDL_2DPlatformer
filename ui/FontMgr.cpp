@@ -1,5 +1,8 @@
 #include "FontMgr.h"
 
+#include <iostream>
+#include "../DebugParams.h"
+
 FontMgr::FontMgr()
 {
     TTF_Init();
