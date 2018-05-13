@@ -2,23 +2,23 @@
 
 SceneMenu::SceneMenu()
 {
-    delay_time = 50;
+    delay_time = DELAT_TIME_MENU;
 
-    menuPosition.x = 120;
-    menuPosition.y = 100;
-    chkbx_side_len = 50;
-    btn_w = 400;
-    btn_h = 70;
+    int menuPosition_x = 120;
+    int menuPosition_y = 100;
+    
+    int btn_w = 400;
+    int btn_h = 70;
 
     // Задаем параметры кнопок
     btn_new_game = ui::Button::create();
     btn_new_game->setCaption("NEW GAME");
-    btn_new_game->setPosition(menuPosition.x, menuPosition.y);
+    btn_new_game->setPosition(menuPosition_x, menuPosition_y);
     btn_new_game->setSize(btn_w, btn_h);
 
     btn_exit = ui::Button::create();
     btn_exit->setCaption("EXIT");
-    btn_exit->setPosition(menuPosition.x, menuPosition.y + btn_h + 30);
+    btn_exit->setPosition(menuPosition_x, menuPosition_y + btn_h + 30);
     btn_exit->setSize(btn_w, btn_h);
 }
 

@@ -10,7 +10,6 @@ class SceneGame: public Scene
 {
 private:
     int lives;
-    int delay_time;
     MainHeroMgr *hero;
 public:
     SceneGame();
