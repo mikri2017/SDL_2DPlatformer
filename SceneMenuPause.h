@@ -8,7 +8,6 @@
 class SceneMenuPause : public Scene
 {
 private:
-    int delay_time;
     SDL_Rect rect_backgrnd;
     Button *btn_continue, *btn_main_menu, *btn_exit;
 public:

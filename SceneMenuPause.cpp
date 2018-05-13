@@ -3,7 +3,7 @@
 
 SceneMenuPause::SceneMenuPause()
 {
-    delay_time = 50;
+    delay_time = DELAT_TIME_MENU;
 
     int menuPosition_x = 120;
     int menuPosition_y = 100;

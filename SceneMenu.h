@@ -8,7 +8,6 @@
 class SceneMenu : public Scene
 {
 private:
-    int delay_time;
     Button *btn_new_game, *btn_exit;
 public:
     SceneMenu();

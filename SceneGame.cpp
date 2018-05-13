@@ -7,7 +7,7 @@ SceneGame::SceneGame()
     lives = 3; // Выставляем количество жизней
     hero = new MainHeroMgr();
 
-    delay_time = 5;
+    delay_time = DELAY_TIME_GAME;
 }
 
 SceneGame::~SceneGame()
