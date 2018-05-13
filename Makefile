@@ -29,12 +29,12 @@ LD = g++
 WINDRES = windres
 endif
 
-INC = 
+INC =
 CFLAGS = -Wall -fexceptions
-RESINC = 
-LIBDIR = 
-LIB = 
-LDFLAGS = 
+RESINC =
+LIBDIR =
+LIB =
+LDFLAGS =
 
 ifeq ($(OS),Windows_NT)
 INC_DEBUG = $(INC) $(SDL2_INC_PARAM)
@@ -54,11 +54,11 @@ endif
 
 ifeq ($(OS),Windows_NT)
 OBJDIR_DEBUG = obj\\Debug
-DEP_DEBUG = 
+DEP_DEBUG =
 OUT_DEBUG = bin\\Debug\\$(EXEC_FILE_NAME).exe
 else
 OBJDIR_DEBUG = obj/Debug
-DEP_DEBUG = 
+DEP_DEBUG =
 OUT_DEBUG = bin/Debug/$(EXEC_FILE_NAME)
 endif
 
@@ -80,11 +80,11 @@ endif
 
 ifeq ($(OS),Windows_NT)
 OBJDIR_RELEASE = obj\\Release
-DEP_RELEASE = 
+DEP_RELEASE =
 OUT_RELEASE = bin\\Release\\$(EXEC_FILE_NAME).exe
 else
 OBJDIR_RELEASE = obj/Release
-DEP_RELEASE = 
+DEP_RELEASE =
 OUT_RELEASE = bin/Release/$(EXEC_FILE_NAME)
 endif
 
@@ -138,11 +138,11 @@ $(OBJDIR_DEBUG)$(PATH_DELIM)SceneMgr.o: SceneMgr.cpp
 $(OBJDIR_DEBUG)$(PATH_DELIM)main.o: main.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c main.cpp -o $(OBJDIR_DEBUG)$(PATH_DELIM)main.o
 
-$(OBJDIR_DEBUG)$(PATH_DELIM)Button.o: Button.cpp
-	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c Button.cpp -o $(OBJDIR_DEBUG)$(PATH_DELIM)Button.o
+$(OBJDIR_DEBUG)$(PATH_DELIM)Button.o: ui/Button.cpp
+	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c ui/Button.cpp -o $(OBJDIR_DEBUG)$(PATH_DELIM)Button.o
 
-$(OBJDIR_DEBUG)$(PATH_DELIM)FontMgr.o: FontMgr.cpp
-	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c FontMgr.cpp -o $(OBJDIR_DEBUG)$(PATH_DELIM)FontMgr.o
+$(OBJDIR_DEBUG)$(PATH_DELIM)FontMgr.o: ui/FontMgr.cpp
+	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c ui/FontMgr.cpp -o $(OBJDIR_DEBUG)$(PATH_DELIM)FontMgr.o
 
 $(OBJDIR_DEBUG)$(PATH_DELIM)GameObject.o: GameObject.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c GameObject.cpp -o $(OBJDIR_DEBUG)$(PATH_DELIM)GameObject.o
@@ -158,7 +158,7 @@ $(OBJDIR_DEBUG)$(PATH_DELIM)MainHeroMgr.o: MainHeroMgr.cpp
 
 $(OBJDIR_DEBUG)$(PATH_DELIM)TextureMgr.o: TextureMgr.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c TextureMgr.cpp -o $(OBJDIR_DEBUG)$(PATH_DELIM)TextureMgr.o
-	
+
 
 clean_debug:
 ifeq ($(OS),Windows_NT)
@@ -213,11 +213,11 @@ $(OBJDIR_RELEASE)$(PATH_DELIM)SceneMgr.o: SceneMgr.cpp
 $(OBJDIR_RELEASE)$(PATH_DELIM)main.o: main.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c main.cpp -o $(OBJDIR_RELEASE)$(PATH_DELIM)main.o
 
-$(OBJDIR_RELEASE)$(PATH_DELIM)Button.o: Button.cpp
-	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c Button.cpp -o $(OBJDIR_RELEASE)$(PATH_DELIM)Button.o
+$(OBJDIR_RELEASE)$(PATH_DELIM)Button.o: ui/Button.cpp
+	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c ui/Button.cpp -o $(OBJDIR_RELEASE)$(PATH_DELIM)Button.o
 
-$(OBJDIR_RELEASE)$(PATH_DELIM)FontMgr.o: FontMgr.cpp
-	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c FontMgr.cpp -o $(OBJDIR_RELEASE)$(PATH_DELIM)FontMgr.o
+$(OBJDIR_RELEASE)$(PATH_DELIM)FontMgr.o: ui/FontMgr.cpp
+	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c ui/FontMgr.cpp -o $(OBJDIR_RELEASE)$(PATH_DELIM)FontMgr.o
 
 $(OBJDIR_RELEASE)$(PATH_DELIM)GameObject.o: GameObject.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c GameObject.cpp -o $(OBJDIR_RELEASE)$(PATH_DELIM)GameObject.o
@@ -234,7 +234,7 @@ $(OBJDIR_RELEASE)$(PATH_DELIM)MainHeroMgr.o: MainHeroMgr.cpp
 $(OBJDIR_RELEASE)$(PATH_DELIM)TextureMgr.o: TextureMgr.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c TextureMgr.cpp -o $(OBJDIR_RELEASE)$(PATH_DELIM)TextureMgr.o
 
-clean_release: 
+clean_release:
 ifeq ($(OS),Windows_NT)
 	del /Q /F $(OBJDIR_RELEASE) $(OBJDIR_RELEASE)
 	rmdir /S /Q bin\\Release
