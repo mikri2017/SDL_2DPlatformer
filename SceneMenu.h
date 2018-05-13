@@ -3,12 +3,13 @@
 
 #include "DebugParams.h"
 #include "Scene.h"
-#include "Button.h"
+#include "ui/Button.h"
 
 class SceneMenu : public Scene
 {
 private:
-    Button *btn_new_game, *btn_exit;
+    ui::ButtonPtr btn_new_game {nullptr};
+    ui::ButtonPtr btn_exit {nullptr};
 public:
     SceneMenu();
     ~SceneMenu();

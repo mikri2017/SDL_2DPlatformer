@@ -11,12 +11,12 @@ SceneMenu::SceneMenu()
     int btn_h = 70;
 
     // Задаем параметры кнопок
-    btn_new_game = new Button();
+    btn_new_game = ui::Button::create();
     btn_new_game->setCaption("NEW GAME");
     btn_new_game->setPosition(menuPosition_x, menuPosition_y);
     btn_new_game->setSize(btn_w, btn_h);
 
-    btn_exit = new Button();
+    btn_exit = ui::Button::create();
     btn_exit->setCaption("EXIT");
     btn_exit->setPosition(menuPosition_x, menuPosition_y + btn_h + 30);
     btn_exit->setSize(btn_w, btn_h);
@@ -24,8 +24,6 @@ SceneMenu::SceneMenu()
 
 SceneMenu::~SceneMenu()
 {
-    delete btn_new_game;
-    delete btn_exit;
 #ifdef DEBUG_MESSAGES_SHOW
     std::cout << "SceneMenu end\n";
 #endif // DEBUG_MESSAGES_SHOW
