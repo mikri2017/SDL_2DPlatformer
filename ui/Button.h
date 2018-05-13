@@ -4,6 +4,8 @@
 #include <SDL2/SDL.h>
 #include <string>
 
+namespace ui {
+
 class FontMgr;
 
 class Button
@@ -25,5 +27,6 @@ public:
     void draw(SDL_Renderer *renderer);
 };
 
+} // namespace ui
 
 #endif // BUTTON_H_INCLUDED

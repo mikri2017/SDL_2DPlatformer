@@ -11,12 +11,12 @@ SceneMenu::SceneMenu()
     btn_h = 70;
 
     // Задаем параметры кнопок
-    btn_new_game = new Button();
+    btn_new_game = new ui::Button();
     btn_new_game->setCaption("NEW GAME");
     btn_new_game->setPosition(menuPosition.x, menuPosition.y);
     btn_new_game->setSize(btn_w, btn_h);
 
-    btn_exit = new Button();
+    btn_exit = new ui::Button();
     btn_exit->setCaption("EXIT");
     btn_exit->setPosition(menuPosition.x, menuPosition.y + btn_h + 30);
     btn_exit->setSize(btn_w, btn_h);

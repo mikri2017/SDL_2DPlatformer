@@ -5,6 +5,8 @@
 #include <string>
 #include <SDL2/SDL_ttf.h>
 
+namespace ui {
+
 enum fontAlign {
     right,
     left,
@@ -34,5 +36,6 @@ public:
     void reloadFont();
 };
 
+} // namespace ui
 
 #endif // FONTMGR_H_INCLUDED

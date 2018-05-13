@@ -3,6 +3,8 @@
 #include <iostream>
 #include "../DebugParams.h"
 
+namespace ui {
+
 FontMgr::FontMgr()
 {
     TTF_Init();
@@ -91,3 +93,5 @@ void FontMgr::reloadFont()
     TTF_CloseFont(font);
     font = TTF_OpenFont(font_name.c_str(), font_size);
 }
+
+} // namespace ui

@@ -4,6 +4,8 @@
 #include "../DebugParams.h"
 #include "FontMgr.h"
 
+namespace ui {
+
 Button::Button()
 {
     btn.x = 0;
@@ -17,7 +19,7 @@ Button::Button()
     font_margin_left_right = 10;
     font_margin_up_dowm = 5;
 
-    font_caption = new FontMgr();
+    font_caption = new ui::FontMgr();
     font_caption->setFontName("assets/fonts/XoloniumBold.ttf");
     font_caption->setFontSize(10);
     font_caption->setFontColor(font_color);
@@ -66,3 +68,5 @@ void Button::draw(SDL_Renderer *renderer)
     SDL_RenderDrawRect(renderer, &btn);
     font_caption->paintText(renderer, s_caption, btn.y, btn.h - font_margin_up_dowm, fontAlign::centre);
 }
+
+} // namespace ui
