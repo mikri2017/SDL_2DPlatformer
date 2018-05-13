@@ -1,4 +1,5 @@
 #include "SceneMenu.h"
+#include "Debug.h"
 
 SceneMenu::SceneMenu()
 {
@@ -6,7 +7,7 @@ SceneMenu::SceneMenu()
 
     int menuPosition_x = 120;
     int menuPosition_y = 100;
-    
+
     int btn_w = 400;
     int btn_h = 70;
 
@@ -24,9 +25,7 @@ SceneMenu::SceneMenu()
 
 SceneMenu::~SceneMenu()
 {
-#ifdef DEBUG_MESSAGES_SHOW
-    std::cout << "SceneMenu end\n";
-#endif // DEBUG_MESSAGES_SHOW
+    debug() << "SceneMenu end" << std::endl;
 }
 
 void SceneMenu::render(SDL_Renderer *renderer)

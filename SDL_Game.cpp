@@ -1,4 +1,5 @@
 #include "SDL_Game.h"
+#include "Debug.h"
 #include <SDL2/SDL_mixer.h>
 
 SDL_Game::SDL_Game()
@@ -14,9 +15,7 @@ SDL_Game::~SDL_Game()
     SDL_DestroyWindow( window ); // Уничтожаем окно
     TTF_Quit(); // Отключаем библиотеку SDL_ttf
     SDL_Quit(); //Выход из SDL
-#ifdef DEBUG_MESSAGES_SHOW
-    std::cout << "SDL_Game end\n";
-#endif // DEBUG_MESSAGES_SHOW
+    debug() << "SDL_Game end" << std::endl;
 }
 
 bool SDL_Game::init(const char* title, int xpos, int ypos,

@@ -1,7 +1,7 @@
 #include "Button.h"
 
 #include <iostream>
-#include "../DebugParams.h"
+#include "../Debug.h"
 #include "../Creator.h"
 
 namespace ui {
@@ -28,9 +28,7 @@ Button::Button()
 
 Button::~Button()
 {
-#ifdef DEBUG_MESSAGES_SHOW
-    std::cout << "Button end\n";
-#endif // DEBUG_MESSAGES_SHOW
+    debug() << "Button end" << std::endl;
 }
 
 void Button::setCaption(std::string caption)
