@@ -11,7 +11,8 @@ private:
     int delay_time;
     SDL_Point menuPosition, btn_size;
     int chkbx_side_len, btn_w, btn_h;
-    ui::ButtonPtr btn_new_game, btn_exit;
+    ui::ButtonPtr btn_new_game {nullptr};
+    ui::ButtonPtr btn_exit {nullptr};
 public:
     SceneMenu();
     ~SceneMenu();

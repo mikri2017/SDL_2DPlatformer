@@ -12,7 +12,9 @@ private:
     SDL_Point menuPosition, btn_size;
     SDL_Rect rect_backgrnd;
     int btn_w, btn_h;
-    ui::ButtonPtr btn_continue, btn_main_menu, btn_exit;
+    ui::ButtonPtr btn_continue {nullptr};
+    ui::ButtonPtr btn_main_menu {nullptr};
+    ui::ButtonPtr btn_exit {nullptr};
 public:
     SceneMenuPause();
     ~SceneMenuPause();

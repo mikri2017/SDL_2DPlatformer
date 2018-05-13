@@ -14,7 +14,7 @@ class Button : public utils::Creator<Button>
 private:
     std::string s_caption;
     SDL_Rect btn;
-    FontMgrPtr font_caption;
+    FontMgrPtr font_caption {nullptr};
     SDL_Color font_color;
     int font_margin_left_right;
     int font_margin_up_dowm;
