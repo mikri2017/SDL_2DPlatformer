@@ -19,7 +19,7 @@ Button::Button()
     font_margin_left_right = 10;
     font_margin_up_dowm = 5;
 
-    font_caption = utils::create<FontMgr>();
+    font_caption = FontMgr::create();//utils::create<FontMgr>();
     font_caption->setFontName("assets/fonts/XoloniumBold.ttf");
     font_caption->setFontSize(10);
     font_caption->setFontColor(font_color);

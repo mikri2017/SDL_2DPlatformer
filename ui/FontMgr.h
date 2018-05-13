@@ -4,6 +4,7 @@
 #include "../MainConstants.h"
 #include <string>
 #include <memory>
+#include "../Creator.h"
 #include <SDL2/SDL_ttf.h>
 
 namespace ui {
@@ -14,7 +15,7 @@ enum fontAlign {
     centre
 };
 
-class FontMgr
+class FontMgr : public utils::Creator<FontMgr>
 {
 private:
     TTF_Font *font;
@@ -37,7 +38,7 @@ public:
     void reloadFont();
 };
 
-typedef typename std::shared_ptr<FontMgr> FontMgrPtr;
+using FontMgrPtr = std::shared_ptr<FontMgr>;
 
 } // namespace ui
 

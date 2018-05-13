@@ -1,5 +1,4 @@
 #include "SceneMenu.h"
-#include "Creator.h"
 
 SceneMenu::SceneMenu()
 {
@@ -12,12 +11,12 @@ SceneMenu::SceneMenu()
     btn_h = 70;
 
     // Задаем параметры кнопок
-    btn_new_game = utils::create<ui::Button>();
+    btn_new_game = ui::Button::create();
     btn_new_game->setCaption("NEW GAME");
     btn_new_game->setPosition(menuPosition.x, menuPosition.y);
     btn_new_game->setSize(btn_w, btn_h);
 
-    btn_exit = utils::create<ui::Button>();
+    btn_exit = ui::Button::create();
     btn_exit->setCaption("EXIT");
     btn_exit->setPosition(menuPosition.x, menuPosition.y + btn_h + 30);
     btn_exit->setSize(btn_w, btn_h);

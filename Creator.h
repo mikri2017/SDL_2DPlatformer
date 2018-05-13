@@ -6,11 +6,15 @@
 
 namespace utils
 {
+    // Шаблонный клас, для создания шаредпоинтеров
     template <typename T>
-    std::shared_ptr<T> create()
+    struct Creator
     {
-        return std::make_shared<T>();
-    }
+        static std::shared_ptr<T> create()
+        {
+            return std::make_shared<T>();
+        }
+    };
 }
 
 #endif // CREATOR_H_INCLUDED

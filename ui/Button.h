@@ -4,11 +4,12 @@
 #include <SDL2/SDL.h>
 #include <string>
 #include <memory>
+#include "../Creator.h"
 #include "FontMgr.h"
 
 namespace ui {
 
-class Button
+class Button : public utils::Creator<Button>
 {
 private:
     std::string s_caption;
@@ -27,7 +28,7 @@ public:
     void draw(SDL_Renderer *renderer);
 };
 
-typedef std::shared_ptr<Button> ButtonPtr;
+using ButtonPtr = std::shared_ptr<Button>;
 
 } // namespace ui
 
