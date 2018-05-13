@@ -5,7 +5,6 @@
 #include <string>
 #include <memory>
 #include "FontMgr.h"
-#include <memory.h>
 
 namespace ui {
 
