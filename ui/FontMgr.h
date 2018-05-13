@@ -1,10 +1,13 @@
 #ifndef FONTMGR_H_INCLUDED
 #define FONTMGR_H_INCLUDED
 
-#include "DebugParams.h"
-#include "MainConstants.h"
-#include <iostream>
+#include "../MainConstants.h"
+#include <string>
+#include <memory>
+#include "../Creator.h"
 #include <SDL2/SDL_ttf.h>
+
+namespace ui {
 
 enum fontAlign {
     right,
@@ -12,7 +15,7 @@ enum fontAlign {
     centre
 };
 
-class FontMgr
+class FontMgr : public utils::Creator<FontMgr>
 {
 private:
     TTF_Font *font;
@@ -35,5 +38,8 @@ public:
     void reloadFont();
 };
 
+using FontMgrPtr = std::shared_ptr<FontMgr>;
+
+} // namespace ui
 
 #endif // FONTMGR_H_INCLUDED

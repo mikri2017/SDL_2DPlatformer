@@ -3,13 +3,15 @@
 
 #include "DebugParams.h"
 #include "Scene.h"
-#include "Button.h"
+#include "ui/Button.h"
 
 class SceneMenuPause : public Scene
 {
 private:
     SDL_Rect rect_backgrnd;
-    Button *btn_continue, *btn_main_menu, *btn_exit;
+    ui::ButtonPtr btn_continue {nullptr};
+    ui::ButtonPtr btn_main_menu {nullptr};
+    ui::ButtonPtr btn_exit {nullptr};
 public:
     SceneMenuPause();
     ~SceneMenuPause();

@@ -1,18 +1,20 @@
 #ifndef BUTTON_H_INCLUDED
 #define BUTTON_H_INCLUDED
 
-#include "DebugParams.h"
-#include <iostream>
 #include <SDL2/SDL.h>
+#include <string>
+#include <memory>
+#include "../Creator.h"
+#include "FontMgr.h"
 
-class FontMgr;
+namespace ui {
 
-class Button
+class Button : public utils::Creator<Button>
 {
 private:
     std::string s_caption;
     SDL_Rect btn;
-    FontMgr *font_caption;
+    FontMgrPtr font_caption {nullptr};
     SDL_Color font_color;
     int font_margin_left_right;
     int font_margin_up_dowm;
@@ -26,5 +28,8 @@ public:
     void draw(SDL_Renderer *renderer);
 };
 
+using ButtonPtr = std::shared_ptr<Button>;
+
+} // namespace ui
 
 #endif // BUTTON_H_INCLUDED

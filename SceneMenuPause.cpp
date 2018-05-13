@@ -18,17 +18,17 @@ SceneMenuPause::SceneMenuPause()
     rect_backgrnd.h = SCREEN_HEIGHT;
 
     // Задаем параметры кнопок
-    btn_continue = new Button();
+    btn_continue = ui::Button::create();
     btn_continue->setCaption("CONTINUE GAME");
     btn_continue->setPosition(menuPosition_x, menuPosition_y);
     btn_continue->setSize(btn_w, btn_h);
 
-    btn_main_menu = new Button();
+    btn_main_menu = ui::Button::create();
     btn_main_menu->setCaption("MAIN MENU");
     btn_main_menu->setPosition(menuPosition_x, menuPosition_y + btn_h + 30);
     btn_main_menu->setSize(btn_w, btn_h);
 
-    btn_exit = new Button();
+    btn_exit = ui::Button::create();
     btn_exit->setCaption("EXIT");
     btn_exit->setPosition(menuPosition_x, menuPosition_y + 2 * btn_h + 60);
     btn_exit->setSize(btn_w, btn_h);
@@ -36,9 +36,6 @@ SceneMenuPause::SceneMenuPause()
 
 SceneMenuPause::~SceneMenuPause()
 {
-    delete btn_continue;
-    delete btn_main_menu;
-    delete btn_exit;
 #ifdef DEBUG_MESSAGES_SHOW
     std::cout << "SceneMenuPause end\n";
 #endif // DEBUG_MESSAGES_SHOW
