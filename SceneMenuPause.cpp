@@ -5,10 +5,11 @@ SceneMenuPause::SceneMenuPause()
 {
     delay_time = 50;
 
-    menuPosition.x = 120;
-    menuPosition.y = 100;
-    btn_w = 400;
-    btn_h = 70;
+    int menuPosition_x = 120;
+    int menuPosition_y = 100;
+
+    int btn_w = 400;
+    int btn_h = 70;
 
     // Фон меню паузы
     rect_backgrnd.x = 0;
@@ -19,17 +20,17 @@ SceneMenuPause::SceneMenuPause()
     // Задаем параметры кнопок
     btn_continue = new Button();
     btn_continue->setCaption("CONTINUE GAME");
-    btn_continue->setPosition(menuPosition.x, menuPosition.y);
+    btn_continue->setPosition(menuPosition_x, menuPosition_y);
     btn_continue->setSize(btn_w, btn_h);
 
     btn_main_menu = new Button();
     btn_main_menu->setCaption("MAIN MENU");
-    btn_main_menu->setPosition(menuPosition.x, menuPosition.y + btn_h + 30);
+    btn_main_menu->setPosition(menuPosition_x, menuPosition_y + btn_h + 30);
     btn_main_menu->setSize(btn_w, btn_h);
 
     btn_exit = new Button();
     btn_exit->setCaption("EXIT");
-    btn_exit->setPosition(menuPosition.x, menuPosition.y + 2 * btn_h + 60);
+    btn_exit->setPosition(menuPosition_x, menuPosition_y + 2 * btn_h + 60);
     btn_exit->setSize(btn_w, btn_h);
 }
 
