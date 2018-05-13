@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include "../DebugParams.h"
-#include "FontMgr.h"
+#include "../Creator.h"
 
 namespace ui {
 
@@ -19,7 +19,7 @@ Button::Button()
     font_margin_left_right = 10;
     font_margin_up_dowm = 5;
 
-    font_caption = new ui::FontMgr();
+    font_caption = utils::create<FontMgr>();
     font_caption->setFontName("assets/fonts/XoloniumBold.ttf");
     font_caption->setFontSize(10);
     font_caption->setFontColor(font_color);
@@ -28,7 +28,6 @@ Button::Button()
 
 Button::~Button()
 {
-    delete font_caption;
 #ifdef DEBUG_MESSAGES_SHOW
     std::cout << "Button end\n";
 #endif // DEBUG_MESSAGES_SHOW

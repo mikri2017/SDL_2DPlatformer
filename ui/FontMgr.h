@@ -3,6 +3,7 @@
 
 #include "../MainConstants.h"
 #include <string>
+#include <memory>
 #include <SDL2/SDL_ttf.h>
 
 namespace ui {
@@ -35,6 +36,8 @@ public:
     void paintText(SDL_Renderer *renderer, std::string text, int y, int h, fontAlign f_align = fontAlign::right);
     void reloadFont();
 };
+
+typedef typename std::shared_ptr<FontMgr> FontMgrPtr;
 
 } // namespace ui
 
