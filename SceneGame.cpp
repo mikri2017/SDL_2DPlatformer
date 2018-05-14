@@ -1,6 +1,8 @@
 #include "MainConstants.h"
 #include "SceneGame.h"
+#include "Debug.h"
 #include <iostream>
+
 
 SceneGame::SceneGame()
 {
@@ -13,9 +15,7 @@ SceneGame::SceneGame()
 SceneGame::~SceneGame()
 {
     delete hero;
-#ifdef DEBUG_MESSAGES_SHOW
-    std::cout << "SceneGame end\n";
-#endif // DEBUG_MESSAGES_SHOW
+    debug() << "SceneGame end" << std::endl;
 }
 
 void SceneGame::render(SDL_Renderer *renderer)

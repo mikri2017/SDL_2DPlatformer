@@ -1,5 +1,5 @@
 #include "SceneMenuPause.h"
-#include <iostream>
+#include "Debug.h"
 
 SceneMenuPause::SceneMenuPause()
 {
@@ -36,9 +36,7 @@ SceneMenuPause::SceneMenuPause()
 
 SceneMenuPause::~SceneMenuPause()
 {
-#ifdef DEBUG_MESSAGES_SHOW
-    std::cout << "SceneMenuPause end\n";
-#endif // DEBUG_MESSAGES_SHOW
+    debug() << "SceneMenuPause end" << std::endl;
 }
 
 void SceneMenuPause::render(SDL_Renderer *renderer)

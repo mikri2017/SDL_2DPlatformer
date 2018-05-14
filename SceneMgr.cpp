@@ -1,6 +1,7 @@
 #include "SceneMgr.h"
 #include "SceneMenu.h"
 #include "SceneMenuPause.h"
+#include "Debug.h"
 
 SceneMgr::SceneMgr()
 {
@@ -11,9 +12,7 @@ SceneMgr::~SceneMgr()
 {
     // Удаляем сцены
     delete_all_scenes();
-#ifdef DEBUG_MESSAGES_SHOW
-    std::cout << "SceneMgr end\n";
-#endif // DEBUG_MESSAGES_SHOW
+    debug() << "SceneMgr end" << std::endl;
 }
 
 void SceneMgr::add_scene(Scene *scene, bool set_active)
@@ -31,18 +30,17 @@ void SceneMgr::delete_all_scenes()
     // Удаляем сцены
 #ifdef DEBUG_MESSAGES_SHOW
     int i = 0;
-#endif // DEBUG_MESSAGES_SHOW
     for(auto it : v_scenes)
     {
-#ifdef DEBUG_MESSAGES_SHOW
-        std::cout << "i = " << i << " begin\n";
-#endif // DEBUG_MESSAGES_SHOW
+        debug() << "i = " << i << " begin" << std::endl;
         delete it;
-#ifdef DEBUG_MESSAGES_SHOW
-        std::cout << "i = " << i << " end\n";
+        debug() << "i = " << i << " end" << std::endl;
         i++;
-#endif // DEBUG_MESSAGES_SHOW
     }
+#else
+    for(auto it : v_scenes)
+        delete it;
+#endif // DEBUG_MESSAGES_SHOW
     v_scenes.clear();
 }
 

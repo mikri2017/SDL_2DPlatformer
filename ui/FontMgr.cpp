@@ -1,7 +1,7 @@
 #include "FontMgr.h"
 
 #include <iostream>
-#include "../DebugParams.h"
+#include "../Debug.h"
 
 namespace ui {
 
@@ -27,9 +27,7 @@ FontMgr::~FontMgr()
 {
     TTF_CloseFont(font);
     TTF_Quit();
-#ifdef DEBUG_MESSAGES_SHOW
-    std::cout << "FontMgr end\n";
-#endif // DEBUG_MESSAGES_SHOW
+    debug() << "FontMgr end" << std::endl;
 }
 
 void FontMgr::setLetterSizeInPX(size_t l_size_px)
