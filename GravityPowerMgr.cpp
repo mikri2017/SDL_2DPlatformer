@@ -79,8 +79,8 @@ SDL_Point GravityPowerMgr::affectWithGravityPower(int step)
         cur_step++;
     }
 
-    p_cur_position.x = 100 + speed * t * cosa;
-    p_cur_position.y = 100 + speed * t * sina - g * t * t / 2;
+    p_cur_position.x = p_begin_position.x + speed * t * cosa;
+    p_cur_position.y = p_begin_position.y + speed * t * sina - g * t * t / 2;
 
     return p_cur_position;
 }
