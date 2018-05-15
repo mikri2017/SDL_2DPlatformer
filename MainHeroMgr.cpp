@@ -6,11 +6,21 @@ MainHeroMgr::MainHeroMgr()
     g_obj = new MainHero();
     g_obj_cleaner = g_obj->getGameObjectZone();
     g_obj->setTextureRowAndFrame(1, 0);
+
     hero_step = 15;
+    b_jumping = false;
+
+    gr_power_mgr = new GravityPowerMgr();
+    gr_power_mgr->setBeginPoint(g_obj->getPositionBeginX(), g_obj->getPositionBeginY());
+    gr_power_mgr->setSpeed(30);
+    gr_power_mgr->setAngle(-38);
+    //gr_power_mgr.setAngle(90);
+    gr_power_mgr->setTimeStep(0.1);
 }
 
 MainHeroMgr::~MainHeroMgr()
 {
+    delete gr_power_mgr;
     delete g_obj;
 }
 
@@ -34,6 +44,14 @@ void MainHeroMgr::setMoveStep(int step)
 
 void MainHeroMgr::draw(SDL_Renderer *renderer)
 {
+    if(b_jumping)
+    {
+        SDL_Point p_next = gr_power_mgr->affectWithGravityPower();
+        g_obj->setPosition(p_next.x, p_next.y);
+        if(p_next.y >= SCREEN_HEIGHT)
+            b_jumping = false;
+    }
+
     SDL_RenderFillRect(renderer, &g_obj_cleaner);
     g_obj_cleaner = g_obj->getGameObjectZone();
     g_obj->draw(renderer);
@@ -56,16 +74,26 @@ gameReaction MainHeroMgr::process_mouse_button_event(SDL_MouseButtonEvent m_btn_
 
 gameReaction MainHeroMgr::process_keyboard_keydown(SDL_Keycode keycode)
 {
-    if(keycode == SDLK_LEFT)
+    if(!b_jumping)
     {
-        g_obj->setPosition(g_obj->getPositionBeginX() - hero_step, g_obj->getPositionBeginY());
-        g_obj->setTextureRowAndFrame(2, 0);
-    }
-    else if(keycode == SDLK_RIGHT)
-    {
-        g_obj->setPosition(g_obj->getPositionBeginX() + hero_step, g_obj->getPositionBeginY());
-        g_obj->setTextureRowAndFrame(1, 0);
-    }
+        if(keycode == SDLK_LEFT)
+        {
+            g_obj->setPosition(g_obj->getPositionBeginX() - hero_step, g_obj->getPositionBeginY());
+            
+            g_obj->setTextureRowAndFrame(2, 0);
+        }
+        else if(keycode == SDLK_RIGHT)
+        {
+            g_obj->setPosition(g_obj->getPositionBeginX() + hero_step, g_obj->getPositionBeginY());
+            gr_power_mgr->setBeginPoint(g_obj->getPositionBeginX(), g_obj->getPositionBeginY());
+            g_obj->setTextureRowAndFrame(1, 0);
+        }
+        else if(keycode == SDLK_SPACE)
+        {
+            gr_power_mgr->setBeginPoint(g_obj->getPositionBeginX(), g_obj->getPositionBeginY());
+            b_jumping = true;
+        }
+    } 
 
     return gameReaction::gr_ignore;
 }
