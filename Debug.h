@@ -4,7 +4,9 @@
 
 #include<iostream>
 
-//#define DEBUG_MESSAGES_SHOW
+// TODO: исправить файлы сборки
+// Для отключения отладочного вывода, надо раскомментировать эту строку
+//#define NO_PRINT_DEBUG
 
 namespace dbg
 {
@@ -41,8 +43,10 @@ public:
 
 } // namespace dbg
 
-#ifndef DEBUG_MESSAGES_SHOW
-    #define debug dbg::NoDebug
-#else
-    #define debug dbg::Debug
+#define debug dbg::Debug
+#define NO_DEBUG_MACRO while (false) dbg::NoDebug
+
+#if defined(NO_PRINT_DEBUG)
+#undef debug
+#define debug NO_DEBUG_MACRO
 #endif
