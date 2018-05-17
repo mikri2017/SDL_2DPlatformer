@@ -1,7 +1,6 @@
 #ifndef SDL_GAME_H_INCLUDED
 #define SDL_GAME_H_INCLUDED
 
-#include "DebugParams.h"
 #include <string>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_mouse.h>
