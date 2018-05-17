@@ -28,6 +28,8 @@ public:
               int height, int width, int flags);
     int process_events();
     void render();
+    void identFrameStart();
+    void execFrameDelay();
 };
 
 #endif // SDL_GAME_H_INCLUDED

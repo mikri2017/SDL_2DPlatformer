@@ -14,9 +14,13 @@ int main( int argc, char* args[] )
 
     std::cout << "Press Esc button to Exit!\n";
 
-    while(game->process_events())
+    bool game_playing = true;
+    while(game_playing)
     {
+        game->identFrameStart();
+        game_playing = game->process_events();
         game->render();
+        game->execFrameDelay();
     }
 
 	delete game;

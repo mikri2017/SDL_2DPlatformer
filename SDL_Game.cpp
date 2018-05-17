@@ -81,10 +81,16 @@ int SDL_Game::process_events()
 
 void SDL_Game::render()
 {
-    frameStart = SDL_GetTicks();
-
     s_mgr->render(renderer);
+}
 
+void SDL_Game::identFrameStart()
+{
+    frameStart = SDL_GetTicks();
+}
+
+void SDL_Game::execFrameDelay()
+{
     // Стабильная частота кадров
     frameTime = SDL_GetTicks() - frameStart;
     if(frameDelay > frameTime)
