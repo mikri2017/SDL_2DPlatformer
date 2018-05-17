@@ -9,6 +9,9 @@
 #include <SDL2/SDL_ttf.h>
 #include "SceneMgr.h"
 
+const int FPS = 60;
+const int frameDelay = 1000 / FPS;
+
 class SDL_Game
 {
 private:
@@ -16,6 +19,8 @@ private:
 	SDL_Renderer *renderer;
 	SceneMgr *s_mgr;
 	std::string SDL_error_msg;
+    Uint32 frameStart;
+    int frameTime;
 public:
     SDL_Game();
     ~SDL_Game();
