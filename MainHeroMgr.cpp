@@ -1,15 +1,16 @@
 #include "MainHeroMgr.h"
 #include "MainHero.h"
+#include <iostream>
 
 MainHeroMgr::MainHeroMgr()
 {
     g_obj = new MainHero();
     g_obj_cleaner = g_obj->getGameObjectZone();
     g_obj->setTextureRowAndFrame(1, 0);
-
+    
     hero_step = 15;
     b_jumping = false;
-
+    
     gr_power_mgr = new GravityPowerMgr();
     gr_power_mgr->setBeginPoint(g_obj->getPositionBeginX(), g_obj->getPositionBeginY());
     gr_power_mgr->setSpeed(50);
@@ -54,6 +55,16 @@ void MainHeroMgr::draw(SDL_Renderer *renderer)
     SDL_RenderFillRect(renderer, &g_obj_cleaner);
     g_obj_cleaner = g_obj->getGameObjectZone();
     g_obj->draw(renderer);
+}
+
+SDL_Rect MainHeroMgr::getGameObjectZone()
+{
+    return g_obj->getGameObjectZone();
+}
+
+SDL_Point MainHeroMgr::getPosition()
+{
+    return { g_obj->getPositionBeginX(), g_obj->getPositionBeginY() };
 }
 
 void MainHeroMgr::setPosition(int x, int y)

@@ -18,6 +18,8 @@ public:
     virtual std::string getErrorText();
     virtual bool init(SDL_Renderer *renderer) = 0;
     virtual void draw(SDL_Renderer *renderer) = 0;
+    virtual SDL_Rect getGameObjectZone() = 0;
+    virtual SDL_Point getPosition() = 0;
     virtual void setPosition(int x, int y) = 0;
     virtual bool checkCollisionWithGameObject(GameObject *g_obj) = 0;
     virtual gameReaction process_mouse_motion(Sint32 x, Sint32 y) = 0;

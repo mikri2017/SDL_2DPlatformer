@@ -18,6 +18,8 @@ public:
     bool init(SDL_Renderer *renderer);
     void setMoveStep(int step);
     void draw(SDL_Renderer *renderer);
+    SDL_Rect getGameObjectZone();
+    SDL_Point getPosition();
     void setPosition(int x, int y);
     bool checkCollisionWithGameObject(GameObject *g_obj);
     gameReaction process_mouse_motion(Sint32 x, Sint32 y);
