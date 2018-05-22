@@ -5,6 +5,7 @@
 #include "ui/FontMgr.h"
 #include "Scene.h"
 #include "MainHeroMgr.h"
+#include "Camera.h"
 
 class LangMgr;
 
@@ -16,6 +17,7 @@ private:
     ui::FontMgr *font_game_info;
     SDL_Color font_color;
     LangMgr *lang_mgr;
+    Camera *cam_main;
 public:
     SceneGame();
     ~SceneGame();

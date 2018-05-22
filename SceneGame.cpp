@@ -22,11 +22,20 @@ SceneGame::SceneGame()
     font_game_info->setFontSize(26);
     font_game_info->setFontColor(font_color);
     font_game_info->setLetterSizeInPX(20);
+
+    // Задаем параметры камеры
+    cam_main = new Camera();
+    cam_main->setGameObjectForWatch(hero);
+    cam_main->setPosition(0, 0);
+    cam_main->setWidthHeight(SCREEN_WIDTH, SCREEN_HEIGHT);
+    cam_main->setGameObjectRelativePos(10, 350);
+    cam_main->setGameObjectWatchingMode(true);
 }
 
 SceneGame::~SceneGame()
 {
     delete font_game_info;
+    delete cam_main;
     delete hero;
     debug() << "SceneGame end" << std::endl;
 }
@@ -80,6 +89,7 @@ gameReaction SceneGame::process_keyboard_keydown(SDL_Keycode keycode)
     if(!b_paused)
     {
         hero->process_keyboard_keydown(keycode);
+        cam_main->updatePosition();
     }
 
     return gameReaction::gr_ignore;
