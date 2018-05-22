@@ -56,6 +56,11 @@ void MainHeroMgr::draw(SDL_Renderer *renderer)
     g_obj->draw(renderer);
 }
 
+void MainHeroMgr::setPosition(int x, int y)
+{
+    g_obj->setPosition(x, y);
+}
+
 bool MainHeroMgr::checkCollisionWithGameObject(GameObject *g_obj)
 {
     return false;

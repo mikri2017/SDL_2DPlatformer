@@ -9,10 +9,12 @@ SceneGame::SceneGame()
 {
     lives = 3; // Выставляем количество жизней
     lang_mgr = LangMgr::Init();
+
+    // Задаем параметры главного персонажа
     hero = new MainHeroMgr();
+    hero->setPosition(10, 350);
 
     // Задаем параметры текста
-    
     font_color = {0, 0, 255};
 
     font_game_info = new ui::FontMgr();

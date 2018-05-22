@@ -20,6 +20,7 @@ public:
     MainHero();
     ~MainHero();
     bool init(SDL_Renderer *renderer);
+    void setPosition(int x, int y);
     void setTextureRowAndFrame(int row, int frame);
     void draw(SDL_Renderer *renderer);
 };

@@ -5,8 +5,8 @@
 MainHero::MainHero()
 {
     // Задаем размеры главного героя
-    g_obj_zone.x = 100;
-    g_obj_zone.y = 100;
+    g_obj_zone.x = 0;
+    g_obj_zone.y = 0;
     g_obj_zone.w = 56;
     g_obj_zone.h = 71;
 
@@ -35,6 +35,17 @@ bool MainHero::init(SDL_Renderer *renderer)
         errorText = SDL_GetError();
         return false;
     }
+}
+
+void MainHero::setPosition(int x, int y)
+{
+    if(x < 0)
+        x = 0;
+    g_obj_zone.x = x;
+
+    if(y < 0)
+        y = 0;
+    g_obj_zone.y = y;
 }
 
 void MainHero::setTextureRowAndFrame(int row, int frame)
