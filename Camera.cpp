@@ -1,8 +1,9 @@
 #include "Camera.h"
+#include "Debug.h"
 
 Camera::Camera()
 {
-    // Задаем зону камеры
+    // Задаем зону камеры на сцене
     area.x = 0;
     area.y = 0;
     area.w = 0;
@@ -14,6 +15,11 @@ Camera::Camera()
     g_obj_mgr_pos.y = 0;
 
     watch_g_obj_mgr = false;
+}
+
+Camera::~Camera()
+{
+    debug() << "Camera end\n";
 }
 
 int Camera::getPositionBeginX()
@@ -28,22 +34,23 @@ int Camera::getPositionBeginY()
 
 void Camera::setPosition(int x, int y)
 {
-    if(!watch_g_obj_mgr)
-    {
-        // Не следим за игровым объектом
         if(x < 0)
             x = 0;
+        area.x = x;
+
         if(y < 0)
             y = 0;
-        
-        area.x = x;
         area.y = y;
-    }
 }
 
 void Camera::setWidthHeight(int w, int h)
 {
+    if(w < 0)
+        w = 0;
     area.w = w;
+
+    if(h < 0)
+        h = 0;
     area.h = h;
 }
 
@@ -53,10 +60,11 @@ void Camera::updatePosition()
     {
         // Меняем данные, если следим за
         // объектом - подстраиваемся под него
-        SDL_Point cur_g_obj_pos = g_obj_mgr->getPosition();
+        SDL_Rect cur_g_obj_zone = g_obj_mgr->getGameObjectRealZone();
+        debug() << "cur_g_obj_zone x: " << cur_g_obj_zone.x << " y: " << cur_g_obj_zone.y << "\n";
         
-        area.x = cur_g_obj_pos.x - g_obj_mgr_pos.x;
-        area.y = cur_g_obj_pos.y - g_obj_mgr_pos.y;
+        area.x = cur_g_obj_zone.x - g_obj_mgr_pos.x;
+        area.y = cur_g_obj_zone.y - g_obj_mgr_pos.y;
 
         // Проверяем выход за границы сцены
         if(area.x < 0)
@@ -89,11 +97,15 @@ void Camera::setGameObjectForWatch(GameObjectMgr *g_obj)
 
 SDL_Rect Camera::getGameObjectAreaInCam(GameObjectMgr *g_obj)
 {
-    SDL_Rect g_obj_in_cam_area = g_obj->getGameObjectZone();
+    SDL_Rect g_obj_in_cam_area = g_obj->getGameObjectRealZone();
+
+    /*
     if(g_obj_in_cam_area.x + g_obj_in_cam_area.w > area.x + area.w)
         g_obj_in_cam_area.w -= area.x + area.w;
     if(g_obj_in_cam_area.y + g_obj_in_cam_area.h > area.y + area.h)
-        g_obj_in_cam_area.h -= area.y + area.h; 
+        g_obj_in_cam_area.h -= area.y + area.h;
+    */
+
     g_obj_in_cam_area.x -= area.x;
     g_obj_in_cam_area.y -= area.y;
     return g_obj_in_cam_area;

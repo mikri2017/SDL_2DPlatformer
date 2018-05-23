@@ -13,6 +13,7 @@ class SceneGame: public Scene
 {
 private:
     int lives;
+    std::string lives_caption;
     MainHeroMgr *hero;
     ui::FontMgr *font_game_info;
     SDL_Color font_color;

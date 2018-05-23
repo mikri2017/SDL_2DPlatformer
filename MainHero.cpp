@@ -1,61 +1,51 @@
 #include "MainHero.h"
-#include <SDL2/SDL_image.h>
 #include "TextureMgr.h"
+#include "Debug.h"
+#include <SDL2/SDL_image.h>
 
 MainHero::MainHero()
 {
-    // Задаем размеры главного героя
-    g_obj_zone.x = 0;
-    g_obj_zone.y = 0;
-    g_obj_zone.w = 56;
-    g_obj_zone.h = 71;
+    g_obj_zone = { 0, 0, 0, 0 };
+    g_obj_real_zone = { 0, 0, 0, 0 };
+    sprite_file_path = "";
+    texture_name = "main_hero";
+    error_text = "";
+    cur_row = 1;
+    cur_frame = 0;
 
-    curRow = 1;
-    curFrame = 0;
-
-    textureName = "main_hero";
-
-    // Указываем спрайтовый файл персонажа
-    spriteFilePath = "assets/sprites/main_hero/Grue.png";
-
-    textureMgr = new TextureMgr();
+    texture_mgr = new TextureMgr();
 }
 
 MainHero::~MainHero()
 {
-    delete textureMgr;
+    delete texture_mgr;
+    debug() << "MainHero end\n";
 }
 
 bool MainHero::init(SDL_Renderer *renderer)
 {
-    if(textureMgr->load(spriteFilePath, textureName, renderer))
+    if(texture_mgr->load(sprite_file_path, texture_name, renderer))
         return true;
     else
     {
-        errorText = SDL_GetError();
+        error_text = SDL_GetError();
         return false;
     }
 }
 
-void MainHero::setPosition(int x, int y)
+void MainHero::draw(SDL_Renderer *renderer)
 {
-    if(x < 0)
-        x = 0;
-    g_obj_zone.x = x;
-
-    if(y < 0)
-        y = 0;
-    g_obj_zone.y = y;
+    //texture_mgr->draw(texture_name, g_obj_zone.x, g_obj_zone.y, g_obj_zone.w, g_obj_zone.h, renderer);
+    texture_mgr->drawFrame(texture_name, g_obj_zone.x, g_obj_zone.y, g_obj_zone.w, g_obj_zone.h, cur_row, cur_frame, renderer);
 }
 
 void MainHero::setTextureRowAndFrame(int row, int frame)
 {
-    curRow = row;
-    curFrame = frame;
-}
+    if(row < 1)
+        row = 1;
+    cur_row = row;
 
-void MainHero::draw(SDL_Renderer *renderer)
-{
-    //textureMgr->draw(textureName, g_obj_zone.x, g_obj_zone.y, g_obj_zone.w, g_obj_zone.h, renderer);
-    textureMgr->drawFrame(textureName, g_obj_zone.x, g_obj_zone.y, g_obj_zone.w, g_obj_zone.h, curRow, curFrame, renderer);
+    if(frame < 0)
+        frame = 0;
+    cur_frame = frame;
 }

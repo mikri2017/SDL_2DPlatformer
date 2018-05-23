@@ -13,6 +13,7 @@ private:
     bool watch_g_obj_mgr;
 public:
     Camera();
+    ~Camera();
     int getPositionBeginX();
     int getPositionBeginY();
     void setPosition(int x, int y);
