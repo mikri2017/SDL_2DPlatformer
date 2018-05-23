@@ -3,25 +3,22 @@
 
 #include "GameObject.h"
 #include <SDL2/SDL.h>
-#include <iostream>
 
 class TextureMgr;
 
 class MainHero : public GameObject
 {
 private:
-    std::string spriteFilePath;
     SDL_Texture *hero_texture;
-    int curRow;
-    int curFrame;
-    TextureMgr *textureMgr;
-    std::string textureName;
+    TextureMgr *texture_mgr;
+    std::string texture_name;
+    int cur_row, cur_frame;
 public:
     MainHero();
     ~MainHero();
     bool init(SDL_Renderer *renderer);
-    void setTextureRowAndFrame(int row, int frame);
     void draw(SDL_Renderer *renderer);
+    void setTextureRowAndFrame(int row, int frame);
 };
 
 #endif // MAINHERO_H_INCLUDED
