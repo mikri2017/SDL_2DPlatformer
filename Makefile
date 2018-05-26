@@ -132,10 +132,6 @@ out_debug: before_debug $(OBJ_DEBUG) $(DEP_DEBUG)
 $(OBJDIR_DEBUG)$(PATH_DELIM)%.o: %.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c $^ -o $@
 
-$(OBJDIR_DEBUG)$(PATH_DELIM)Camera.o: Camera.cpp
-	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c Camera.cpp -o $(OBJDIR_DEBUG)$(PATH_DELIM)Camera.o
-
-
 clean_debug:
 ifeq ($(OS),Windows_NT)
 	del /Q /F $(OBJ_DEBUG) $(OUT_DEBUG)
@@ -172,9 +168,6 @@ out_release: before_release $(OBJ_RELEASE) $(DEP_RELEASE)
 
 $(OBJDIR_RELEASE)$(PATH_DELIM)%.o: %.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c $^ -o $@
-
-$(OBJDIR_RELEASE)$(PATH_DELIM)Camera.o: Camera.cpp
-	$(CXX) $(CFLAGS_DEBUG) $(INC_RELEASE) -c Camera.cpp -o $(OBJDIR_RELEASE)$(PATH_DELIM)Camera.o
 
 clean_release:
 ifeq ($(OS),Windows_NT)
