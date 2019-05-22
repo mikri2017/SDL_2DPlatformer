@@ -8,6 +8,8 @@ set PROG_NAME=SDL2_Platformer.exe
 
 set CXX=g++.exe
 set COMPILE_FILES=.\*.cpp .\ui\*.cpp
+set CFLAGS_DEBUG=-Wall -fexceptions -g
+set CFLAGS_RELEASE=-Wall -fexceptions -O2
 
 set DEBUG_OUTPUT_FOLDER=bin\Debug
 set DEBUG_OUTFILE=%DEBUG_OUTPUT_FOLDER%\%PROG_NAME%
@@ -27,7 +29,7 @@ if "%BUILD_TYPE%" EQU "debug" (
 
     if not exist %DEBUG_OUTPUT_FOLDER%\*.* mkdir %DEBUG_OUTPUT_FOLDER%
 
-    %CXX% %SDL2_INC_PARAM% %SDL2_LIB_PARAM% %COMPILE_FILES% -o %DEBUG_OUTFILE% %SDL2_LD_PARAM%
+    %CXX% %CFLAGS_DEBUG% %SDL2_INC_PARAM% %SDL2_LIB_PARAM% %COMPILE_FILES% -o %DEBUG_OUTFILE% %SDL2_LD_PARAM%
 
     xcopy /E /Y assets %DEBUG_OUTPUT_FOLDER%\assets\
     xcopy /E /Y lang %DEBUG_OUTPUT_FOLDER%\lang\
@@ -37,7 +39,7 @@ if "%BUILD_TYPE%" EQU "debug" (
 
     if not exist %RELEASE_OUTPUT_FOLDER%\*.* mkdir %RELEASE_OUTPUT_FOLDER%
 
-    %CXX% %SDL2_INC_PARAM% %SDL2_LIB_PARAM% %COMPILE_FILES% -o %RELEASE_OUTFILE% %SDL2_LD_PARAM%
+    %CXX% %CFLAGS_RELEASE% %SDL2_INC_PARAM% %SDL2_LIB_PARAM% %COMPILE_FILES% -o %RELEASE_OUTFILE% %SDL2_LD_PARAM%
 
     xcopy /E /Y assets %RELEASE_OUTPUT_FOLDER%\assets\
     xcopy /E /Y lang %RELEASE_OUTPUT_FOLDER%\lang\
