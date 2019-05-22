@@ -27,14 +27,14 @@
             "name": "Windows (gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/bin/Debug/SDL_2DPlatformer",
+            "program": "${workspaceFolder}/bin/Debug/SDL2_Platformer.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:/MinGW/MinGW/bin/gdb.exe",
+            "miDebuggerPath": "C:/MinGW/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/gdb.exe",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
