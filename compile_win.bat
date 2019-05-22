@@ -17,8 +17,8 @@ set DEBUG_OUTFILE=%DEBUG_OUTPUT_FOLDER%\%PROG_NAME%
 set RELEASE_OUTPUT_FOLDER=bin\Release
 set RELEASE_OUTFILE=%RELEASE_OUTPUT_FOLDER%\%PROG_NAME%
 
-set SDL2_INC_PARAM=-IC:\SDL\SDL2-2.0.8\i686-w64-mingw32\include -IC:\SDL\SDL2_ttf-2.0.14\i686-w64-mingw32\include -IC:\SDL\SDL2_mixer-2.0.2\i686-w64-mingw32\include -IC:\SDL\SDL2_image-2.0.3\i686-w64-mingw32\include
-set SDL2_LIB_PARAM=-LC:\SDL\SDL2-2.0.8\i686-w64-mingw32\lib -LC:\SDL\SDL2_ttf-2.0.14\i686-w64-mingw32\lib -LC:\SDL\SDL2_mixer-2.0.2\x86_64-w64-mingw32\lib -LC:\SDL\SDL2_image-2.0.3\i686-w64-mingw32\lib
+set SDL2_INC_PARAM=-IC:\SDL\SDL2-2.0.9\i686-w64-mingw32\include -IC:\SDL\SDL2_ttf-2.0.15\i686-w64-mingw32\include -IC:\SDL\SDL2_mixer-2.0.4\i686-w64-mingw32\include -IC:\SDL\SDL2_image-2.0.4\i686-w64-mingw32\include
+set SDL2_LIB_PARAM=-LC:\SDL\SDL2-2.0.9\i686-w64-mingw32\lib -LC:\SDL\SDL2_ttf-2.0.15\i686-w64-mingw32\lib -LC:\SDL\SDL2_mixer-2.0.4\x86_64-w64-mingw32\lib -LC:\SDL\SDL2_image-2.0.4\i686-w64-mingw32\lib
 
 set SDL2_LD_PARAM=-lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lSDL2_mixer -lSDL2_image
 
