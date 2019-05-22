@@ -42,11 +42,8 @@
         {
             "label": "Windows g++ Debug",
             "type": "shell",
-            "command": "set",
+            "command": "compile_win.bat",
             "args": [
-                "PATH=C:/MinGW/MinGW/bin/;PATH",
-                "&&",
-                "mingw32-make.exe",
                 "debug"
             ],
             "group": {
@@ -57,11 +54,8 @@
         {
             "label": "Windows g++ Release",
             "type": "shell",
-            "command": "set",
+            "command": "compile_win.bat",
             "args": [
-                "PATH=C:/MinGW/MinGW/bin/;PATH",
-                "&&",
-                "mingw32-make.exe",
                 "release"
             ],
             "group": {
@@ -72,11 +66,8 @@
         {
             "label": "Windows g++ Clean",
             "type": "shell",
-            "command": "set",
+            "command": "compile_win.bat",
             "args": [
-                "PATH=C:/MinGW/MinGW/bin/;PATH",
-                "&&",
-                "mingw32-make.exe",
                 "clean"
             ],
             "group": {

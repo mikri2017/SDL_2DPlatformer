@@ -11,7 +11,9 @@
 * SDL2_ttf
 
 2. Windows:
-Требуется компилятор MinGW, установленный в C:\MinGW\MinGW и перечисленные библиотеки SDL2, о них подробно ниже:
+* Компилятор MinGW-w64 (C:\MinGW\i686-8.1.0-posix-dwarf-rt_v6-rev0)
+
+https://sourceforge.net/projects/mingw-w64/
 * SDL2 (C:\SDL\SDL2-2.0.8)
   
   https://www.libsdl.org/download-2.0.php
