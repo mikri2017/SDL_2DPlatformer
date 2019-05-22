@@ -13,9 +13,9 @@
 2. Windows:
 * Компилятор MinGW-w64 (C:\MinGW\i686-8.1.0-posix-dwarf-rt_v6-rev0)
 
-https://sourceforge.net/projects/mingw-w64/
+  https://sourceforge.net/projects/mingw-w64/
 * SDL2 (C:\SDL\SDL2-2.0.8)
-  
+
   https://www.libsdl.org/download-2.0.php
 * SLD2_image (C:\SDL\SDL2_image-2.0.3)
 
