@@ -107,6 +107,6 @@ SDL_Rect Camera::getGameObjectAreaInCam(GameObjectMgr *g_obj)
     */
 
     g_obj_in_cam_area.x -= area.x;
-    g_obj_in_cam_area.y -= area.y;
+    //g_obj_in_cam_area.y -= area.y;
     return g_obj_in_cam_area;
 }

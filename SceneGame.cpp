@@ -99,6 +99,7 @@ gameReaction SceneGame::process_keyboard_keydown(SDL_Keycode keycode)
         hero->process_keyboard_keydown(keycode);
         cam_main->updatePosition();
 
+        //SDL_Rect hero_pos = hero->getGameObjectRealZone();
         SDL_Rect hero_pos = cam_main->getGameObjectAreaInCam(hero);
         hero->setPosition(hero_pos.x, hero_pos.y);
         debug() << "hero_x: " << hero_pos.x << " hero_y: " << hero_pos.y << "\n";

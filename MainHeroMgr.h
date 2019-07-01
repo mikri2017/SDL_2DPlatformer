@@ -10,8 +10,7 @@ class MainHeroMgr : public GameObjectMgr
 {
 private:
     int move_step;
-    bool jumping;
-    GravityPowerMgr *gr_power_mgr;
+    //GravityPowerMgr *gr_power_mgr;
 public:
     MainHeroMgr();
     ~MainHeroMgr();
