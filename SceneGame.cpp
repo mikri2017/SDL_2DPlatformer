@@ -35,7 +35,7 @@ SceneGame::SceneGame()
     cam_main->setPosition(0, 0);
     cam_main->setWidthHeight(SCREEN_WIDTH, SCREEN_HEIGHT);
     cam_main->setGameObjectForWatch(hero);
-    cam_main->setGameObjectRelativePos(50, 350);
+    cam_main->setGameObjectRelativePos(SCREEN_WIDTH / 2 - hero->getWidth(), 350);
     cam_main->setGameObjectWatchingMode(true);
     cam_main->updatePosition();
     SDL_Rect hero_pos = cam_main->getGameObjectAreaInCam(hero);
