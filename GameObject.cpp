@@ -59,12 +59,12 @@ int GameObject::getHeight()
 
 void GameObject::setWidthHeight(int w, int h)
 {
-    if(w < 0)
+    if (w < 0)
         w = 0;
     g_obj_zone.w = w;
     g_obj_real_zone.w = w;
 
-    if(h < 0)
+    if (h < 0)
         h = 0;
     g_obj_zone.h = h;
     g_obj_real_zone.h = h;

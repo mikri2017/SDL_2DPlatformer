@@ -32,13 +32,13 @@ SceneMenu::~SceneMenu()
 
 void SceneMenu::render(SDL_Renderer *renderer)
 {
-    if(b_first_render)
+    if (b_first_render)
     {
         setFirstRenderState(false);
 
-        SDL_SetRenderDrawColor( renderer, 255, 255, 255, 255 );
-        SDL_RenderClear( renderer );
-        SDL_SetRenderDrawColor( renderer, 255, 0, 0, 255 );
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        SDL_RenderClear(renderer);
+        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
     }
 
     btn_new_game->draw(renderer);
@@ -55,18 +55,18 @@ gameReaction SceneMenu::process_mouse_motion(Sint32 x, Sint32 y)
 gameReaction SceneMenu::process_mouse_button_event(SDL_MouseButtonEvent m_btn_event)
 {
     // Клик левой кнопкой мышки
-    if(m_btn_event.button == SDL_BUTTON_LEFT)
+    if (m_btn_event.button == SDL_BUTTON_LEFT)
     {
         // Один клик
-        if(m_btn_event.clicks == 1)
+        if (m_btn_event.clicks == 1)
         {
-            if(btn_exit->checkHover(m_btn_event.x, m_btn_event.y))
+            if (btn_exit->checkHover(m_btn_event.x, m_btn_event.y))
             {
                 // Выходим из игры
                 return gameReaction::gr_exit;
             }
 
-            if(btn_new_game->checkHover(m_btn_event.x, m_btn_event.y))
+            if (btn_new_game->checkHover(m_btn_event.x, m_btn_event.y))
             {
                 // Начинаем новую игру
                 return gameReaction::gr_start_new;

@@ -24,7 +24,7 @@ MainHero::~MainHero()
 
 bool MainHero::init(SDL_Renderer *renderer)
 {
-    if(texture_mgr->load(sprite_file_path, texture_name, renderer))
+    if (texture_mgr->load(sprite_file_path, texture_name, renderer))
         return true;
     else
     {
@@ -41,11 +41,11 @@ void MainHero::draw(SDL_Renderer *renderer)
 
 void MainHero::setTextureRowAndFrame(int row, int frame)
 {
-    if(row < 1)
+    if (row < 1)
         row = 1;
     cur_row = row;
 
-    if(frame < 0)
+    if (frame < 0)
         frame = 0;
     cur_frame = frame;
 }

@@ -4,12 +4,12 @@
 bool TextureMgr::load(std::string fileName, std::string id, SDL_Renderer *renderer)
 {
     SDL_Surface *tempSurface = IMG_Load(fileName.c_str());
-    if(tempSurface == 0)
+    if (tempSurface == 0)
         return false;
     
     SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, tempSurface);
     SDL_FreeSurface(tempSurface);
-    if(tempSurface != 0)
+    if (tempSurface != 0)
     {
         m_textureMap[id] = texture;
         return true;

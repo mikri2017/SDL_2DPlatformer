@@ -51,14 +51,14 @@ void GravityPowerMgr::setAngle(int a)
 
 void GravityPowerMgr::setTimeStep(float dt)
 {
-    if(dt < 0)
+    if (dt < 0)
         dt = 0;
     delta_t = dt;
 }
 
 void GravityPowerMgr::setAccelOfGravity(float ag)
 {
-    if(ag < 0)
+    if (ag < 0)
         ag = 0;
     g = ag;
 }
@@ -71,7 +71,7 @@ void GravityPowerMgr::resetStep()
 SDL_Point GravityPowerMgr::affectWithGravityPower(int step)
 {
     float t;
-    if(step > -1)
+    if (step > -1)
         t = delta_t * step;
     else
     {

@@ -18,7 +18,7 @@ LangMgr::~LangMgr()
 
 LangMgr* LangMgr::Init()
 {
-    if(l_mgr == 0)
+    if (l_mgr == 0)
         l_mgr = new LangMgr();
     return l_mgr;
 }
@@ -31,16 +31,16 @@ bool LangMgr::reInitLangMap()
     std::string s_val = "";
     bool b_key = true;
     char tmp_ch;
-    if(in)
+    if (in)
     {
         fscanf(in, "%c", &tmp_ch);
         while(!feof(in))
         {
-            if(tmp_ch == '=')
+            if (tmp_ch == '=')
                 b_key = false;
-            else if(tmp_ch == '\n' || tmp_ch == '\r')
+            else if (tmp_ch == '\n' || tmp_ch == '\r')
             {
-                if( s_key != "" && s_val != "")
+                if (s_key != "" && s_val != "")
                     m_lang[s_key] = s_val;
                 s_key = "";
                 s_val = "";
@@ -48,7 +48,7 @@ bool LangMgr::reInitLangMap()
             }
             else
             {
-                if(b_key)
+                if (b_key)
                     s_key += tmp_ch;
                 else s_val += tmp_ch;
             }
@@ -56,7 +56,7 @@ bool LangMgr::reInitLangMap()
             fscanf(in, "%c", &tmp_ch);
         }
 
-        if( s_key != "" && s_val != "")
+        if (s_key != "" && s_val != "")
             m_lang[s_key] = s_val;
         
         fclose(in);
@@ -102,7 +102,7 @@ std::string LangMgr::getPhrase(std::string str_code)
 {
     std::string res = "";
     auto phrase = m_lang.find(str_code);
-    if(phrase != m_lang.end())
+    if (phrase != m_lang.end())
         res = phrase->second;
     return res;
 }

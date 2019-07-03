@@ -51,9 +51,9 @@ void Button::setSize(int w, int h)
 
 bool Button::checkHover(int x, int y)
 {
-    if(x >= btn.x && x <= btn.x + btn.w)
+    if (x >= btn.x && x <= btn.x + btn.w)
     {
-        if(y >= btn.y && y <= btn.y + btn.h)
+        if (y >= btn.y && y <= btn.y + btn.h)
             return true;
     }
 

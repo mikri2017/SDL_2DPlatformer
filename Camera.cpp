@@ -34,29 +34,29 @@ int Camera::getPositionBeginY()
 
 void Camera::setPosition(int x, int y)
 {
-        if(x < 0)
+        if (x < 0)
             x = 0;
         area.x = x;
 
-        if(y < 0)
+        if (y < 0)
             y = 0;
         area.y = y;
 }
 
 void Camera::setWidthHeight(int w, int h)
 {
-    if(w < 0)
+    if (w < 0)
         w = 0;
     area.w = w;
 
-    if(h < 0)
+    if (h < 0)
         h = 0;
     area.h = h;
 }
 
 void Camera::updatePosition()
 {
-    if(watch_g_obj_mgr)
+    if (watch_g_obj_mgr)
     {
         // Меняем данные, если следим за
         // объектом - подстраиваемся под него
@@ -67,20 +67,20 @@ void Camera::updatePosition()
         area.y = cur_g_obj_zone.y - g_obj_mgr_pos.y;
 
         // Проверяем выход за границы сцены
-        if(area.x < 0)
+        if (area.x < 0)
             area.x = 0;
-        if(area.y < 0)
+        if (area.y < 0)
             area.y = 0;
     }
 }
 
 void Camera::setGameObjectRelativePos(int x, int y)
 {
-    if(x < 0)
+    if (x < 0)
         x = 0;
     g_obj_mgr_pos.x = x;
 
-    if(y < 0)
+    if (y < 0)
         y = 0;
     g_obj_mgr_pos.y = y;
 }
@@ -100,9 +100,9 @@ SDL_Rect Camera::getGameObjectAreaInCam(GameObjectMgr *g_obj)
     SDL_Rect g_obj_in_cam_area = g_obj->getGameObjectRealZone();
 
     /*
-    if(g_obj_in_cam_area.x + g_obj_in_cam_area.w > area.x + area.w)
+    if (g_obj_in_cam_area.x + g_obj_in_cam_area.w > area.x + area.w)
         g_obj_in_cam_area.w -= area.x + area.w;
-    if(g_obj_in_cam_area.y + g_obj_in_cam_area.h > area.y + area.h)
+    if (g_obj_in_cam_area.y + g_obj_in_cam_area.h > area.y + area.h)
         g_obj_in_cam_area.h -= area.y + area.h;
     */
 

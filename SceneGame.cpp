@@ -52,18 +52,18 @@ SceneGame::~SceneGame()
 
 void SceneGame::render(SDL_Renderer *renderer)
 {
-    if(!b_paused)
+    if (!b_paused)
     {
-        if(b_first_render)
+        if (b_first_render)
         {
             setFirstRenderState(false);
-            if(!hero->init(renderer))
+            if (!hero->init(renderer))
                 std::cout << "Error: " << hero->getErrorText() << std::endl;
         }
 
-        SDL_SetRenderDrawColor( renderer, 255, 255, 255, 255 );
-        SDL_RenderClear( renderer );
-        SDL_SetRenderDrawColor( renderer, 255, 255, 255, 255 );
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        SDL_RenderClear(renderer);
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 
         hero->draw(renderer);
 
@@ -80,7 +80,7 @@ void SceneGame::render_clean(SDL_Renderer *renderer)
 
 gameReaction SceneGame::process_mouse_motion(Sint32 x, Sint32 y)
 {
-    if(!b_paused)
+    if (!b_paused)
     {
     }
 
@@ -94,7 +94,7 @@ gameReaction SceneGame::process_mouse_button_event(SDL_MouseButtonEvent m_btn_ev
 
 gameReaction SceneGame::process_keyboard_keydown(SDL_Keycode keycode)
 {
-    if(!b_paused)
+    if (!b_paused)
     {
         hero->process_keyboard_keydown(keycode);
         cam_main->updatePosition();

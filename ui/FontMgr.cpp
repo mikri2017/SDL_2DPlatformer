@@ -14,7 +14,7 @@ FontMgr::FontMgr()
     font_name = "assets/fonts/XoloniumBold.ttf";
     font = TTF_OpenFont(font_name.c_str(), font_size);
 
-    if(!font)
+    if (!font)
         std::cout << SDL_GetError() << std::endl;
 
     font_color = {0, 0, 255};
@@ -65,9 +65,9 @@ void FontMgr::paintText(SDL_Renderer *renderer, std::string text, int y, int h, 
     int text_width_px = letter_size_px * static_cast<int>(text.length());
 
     // Настраиваем форматирование текста
-    if(f_align == fontAlign::right) // по правому краю
+    if (f_align == fontAlign::right) // по правому краю
         x = x_start_right - scn_indent - text_width_px;
-    else if(f_align == fontAlign::centre) // по центру
+    else if (f_align == fontAlign::centre) // по центру
         x = x_start_left + (x_start_right - x_start_left - text_width_px) / 2;
     else // по левому краю
         x = x_start_left;
