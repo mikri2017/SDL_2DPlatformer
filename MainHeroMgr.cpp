@@ -57,7 +57,10 @@ gameReaction MainHeroMgr::process_keyboard_keydown(SDL_Keycode keycode)
 {
     if (keycode == SDLK_LEFT)
     {
-        g_obj->setRealPosition(g_obj->getRealPositionBeginX() - move_step, g_obj->getRealPositionBeginY());
+        if (g_obj->getRealPositionBeginX() - move_step >= 0)
+        {
+            g_obj->setRealPosition(g_obj->getRealPositionBeginX() - move_step, g_obj->getRealPositionBeginY());
+        }
         //gr_power_mgr->setAngle(-90-(90-58));
         g_obj->setTextureRowAndFrame(2, 0);
     }
