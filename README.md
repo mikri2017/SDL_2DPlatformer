@@ -33,7 +33,7 @@
 Для установки библиотек SDL2, например, в Debian достаточно выполнить команду:
 
 ```
-sudo apt-get install libsdl2-dev libsdl2-image-dev libsd2-mixer-dev libsdl2-ttf-dev
+sudo apt-get install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
 ```
 
 ### Компиляция и использование
