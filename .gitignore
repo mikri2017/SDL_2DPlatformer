@@ -1,3 +1,5 @@
 *.o
 bin
 *.dll
+.vscode/ipch
+assets
