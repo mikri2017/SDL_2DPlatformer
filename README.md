@@ -16,16 +16,16 @@
   https://sourceforge.net/projects/mingw-w64/
 * SDL2 (C:\SDL\SDL2-2.0.8)
 
-  https://www.libsdl.org/download-2.0.php
+  https://github.com/libsdl-org/SDL/releases
 * SLD2_image (C:\SDL\SDL2_image-2.0.3)
 
-  https://www.libsdl.org/projects/SDL_image/
+  https://github.com/libsdl-org/SDL_image/releases
 * SDL2_mixer (C:\SDL\SDL2_mixer-2.0.2)
   
-  https://www.libsdl.org/projects/SDL_mixer/
+  https://github.com/libsdl-org/SDL_mixer/releases
 * SDL2_ttf (C:\SDL\SDL2_ttf-2.0.14)
   
-  https://www.libsdl.org/projects/SDL_ttf/
+  https://github.com/libsdl-org/SDL_ttf/releases
 
 3. Linux:
 Требуется компилятор g++.
