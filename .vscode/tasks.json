@@ -42,7 +42,7 @@
         {
             "label": "Windows g++ Debug",
             "type": "shell",
-            "command": "compile_win.bat",
+            "command": ".\\compile_win.bat",
             "args": [
                 "debug"
             ],
@@ -54,7 +54,7 @@
         {
             "label": "Windows g++ Release",
             "type": "shell",
-            "command": "compile_win.bat",
+            "command": ".\\compile_win.bat",
             "args": [
                 "release"
             ],
@@ -66,7 +66,7 @@
         {
             "label": "Windows g++ Clean",
             "type": "shell",
-            "command": "compile_win.bat",
+            "command": ".\\compile_win.bat",
             "args": [
                 "clean"
             ],

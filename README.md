@@ -13,17 +13,17 @@
 2. Windows:
 * Компилятор MinGW-w64 (C:\MinGW\i686-8.1.0-posix-dwarf-rt_v6-rev0)
 
-  https://sourceforge.net/projects/mingw-w64/
-* SDL2 (C:\SDL\SDL2-2.0.8)
+  https://sourceforge.net/projects/mingw-w64/files/mingw-w64/
+* SDL2 (C:\SDL\SDL2-2.26.5)
 
   https://github.com/libsdl-org/SDL/releases
-* SLD2_image (C:\SDL\SDL2_image-2.0.3)
+* SLD2_image (C:\SDL\SDL2_image-2.6.3)
 
   https://github.com/libsdl-org/SDL_image/releases
-* SDL2_mixer (C:\SDL\SDL2_mixer-2.0.2)
+* SDL2_mixer (C:\SDL\SDL2_mixer-2.6.3)
   
   https://github.com/libsdl-org/SDL_mixer/releases
-* SDL2_ttf (C:\SDL\SDL2_ttf-2.0.14)
+* SDL2_ttf (C:\SDL\SDL2_ttf-2.20.2)
   
   https://github.com/libsdl-org/SDL_ttf/releases
 
