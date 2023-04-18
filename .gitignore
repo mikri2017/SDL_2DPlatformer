@@ -2,4 +2,5 @@
 bin
 *.dll
 .vscode/ipch
-assets
+*.png
+*.ttf
