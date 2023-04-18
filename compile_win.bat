@@ -38,7 +38,7 @@ if "%BUILD_TYPE%" EQU "debug" (
 
     xcopy /E /Y assets %DEBUG_OUTPUT_FOLDER%\assets\
     xcopy /E /Y lang %DEBUG_OUTPUT_FOLDER%\lang\
-    xcopy /E /Y deps %DEBUG_OUTPUT_FOLDER%\
+    xcopy /E /Y deps\debug %DEBUG_OUTPUT_FOLDER%\
 ) else if "%BUILD_TYPE%" EQU "release" (
     echo "Compiling in Release mode"
 
@@ -48,7 +48,7 @@ if "%BUILD_TYPE%" EQU "debug" (
 
     xcopy /E /Y assets %RELEASE_OUTPUT_FOLDER%\assets\
     xcopy /E /Y lang %RELEASE_OUTPUT_FOLDER%\lang\
-    xcopy /E /Y deps %RELEASE_OUTPUT_FOLDER%\
+    xcopy /E /Y deps\release %RELEASE_OUTPUT_FOLDER%\
 ) else if "%BUILD_TYPE%" EQU "clean" (
     echo "Clean all builds"
 
